@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def create
-    @new_message = current_user.messages.build(strong_params)
+    @new_message = current_user.messages.build(message_params)
 
     if @new_message.save
       chat = @new_message.chat
@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
 
   private
 
-  def strong_params
+  def message_params
     params.require(:message).permit(:text, :chat_id)
   end
 end

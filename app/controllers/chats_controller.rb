@@ -1,4 +1,6 @@
 class ChatsController < ApplicationController
+  before_action :authenticate_user!, only: :show
+
   def index
     @chats = Chat.all
     @new_chat = Chat.new
