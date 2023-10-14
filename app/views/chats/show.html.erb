@@ -1,0 +1,31 @@
+<%= turbo_stream_from @chat %>
+<%= turbo_stream_from [current_user, @chat] %>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="shadow p-3 mb-5 bg-white rounded">
+        <div class="overflow-x-auto" id="chat-container">
+          <div class="py-2 align-middle inline-block min-w-full" id="chat_<%= @chat.id %>_messages">
+            <% @messages.each do |message| %>
+              <div class="mb-3">
+                <span class="font-weight-bold"><%= message.user.email %>:</span>
+                <p class="text-muted"><%= message.text %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <%= form_with model: @new_message, data: { controller: "chat_refresh", action: "turbo:submit-end->chat_refresh#clearInput" } do |f| %>
+        <div class="form-group">
+          <%= f.text_field :text, autofocus: true, required: true, placeholder: "Your message", class: "form-control" %>
+          <%= f.hidden_field :chat_id, value: @chat.id %>
+        </div>
+        <div class="text-right mt-2">
+          <%= f.submit "Send", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<%= turbo_stream_from :chats %>
+
+<%= turbo_frame_tag :chats do %>
+  <%= render @chats %>
+<% end %>
+
+<% if current_user.present? %>
+  <%= form_with model: @new_chat, class: "mt-4" do |f| %>
+    <div class="input-group">
+      <%= f.text_field :title, class: "form-control", placeholder: "Enter chat title" %>
+      <div class="input-group-append">
+        <%= f.submit "Create chat", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

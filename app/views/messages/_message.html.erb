@@ -1,0 +1,7 @@
+<div class="shadow overflow-hidden border border-primary sm:rounded-lg my-4 py-2 pl-1">
+  <div class="flex flex-row">
+    <div class="col-3"><%= l(message.created_at, format: :short) %></div>
+    <div class="col-3"><%= message.user.email %></div>
+    <div class="col-6"><%= message.text %></div>
+  </div>
+</div>

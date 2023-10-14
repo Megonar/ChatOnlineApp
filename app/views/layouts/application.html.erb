@@ -2,19 +2,19 @@
 <html>
   <head>
     <title>ChatOnlineApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload", "data-turbo-frame": "application" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", "data-turbo-frame": "application", defer: true %>
   </head>
 
   <body>
     <div class="container">
-      <div class="d-flex justify-content-between">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
         <a class="navbar-brand" href="#">ChatOnlineApp</a>
-        <div>
+        <div class="d-flex">
           <% if current_user.present? %>
             <span class="navbar-text mr-3">Signed in as: <%= current_user.email %></span>
             <%= link_to "Sign Out", destroy_user_session_path, data: { "turbo-method": "delete" }, class: "btn btn-secondary" %>
@@ -23,8 +23,8 @@
             <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
           <% end %>
         </div>
-      </div>
+      </nav>
+      <%= yield %>
     </div>
-    <%= yield %>
   </body>
 </html>
