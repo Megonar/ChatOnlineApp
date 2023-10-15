@@ -21,15 +21,18 @@ To create and set up the database, follow these steps:
 
 2. Apply database migrations:
 
+    ```bash
     rails db:migrate
 
 3. Seed the database with initial data:
 
+    ```bash
     rails db:seed
 
 ## Start Application
 
-  rails server
+    ```bash
+    rails server
 
 
 # Using the API
@@ -38,12 +41,14 @@ To create and set up the database, follow these steps:
 
   To retrieve a list of all chats using the API, make a GET request to the following endpoint:
 
+    ```bash
     curl http://localhost:3000/api/v1/chats
 
 ## Send a Message via API to any Chat
 
   To send a message to a chat using the API, make a POST request with the message text to the following endpoint, replacing [Chat_name] with the actual chat name:
 
+    ```bash
     curl -X POST \
   -H "Content-Type: application/json" \
   -d '{
