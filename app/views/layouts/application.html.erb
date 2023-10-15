@@ -13,7 +13,7 @@
   <body>
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
-        <a class="navbar-brand" href="#">ChatOnlineApp</a>
+        <a class="navbar-brand" href="<%= root_path %>">ChatOnlineApp</a>
         <div class="d-flex">
           <% if current_user.present? %>
             <span class="navbar-text mr-3">Signed in as: <%= current_user.email %></span>

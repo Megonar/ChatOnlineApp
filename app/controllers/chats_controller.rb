@@ -19,6 +19,7 @@ class ChatsController < ApplicationController
 
     if @new_chat.save
       @new_chat.broadcast_append_to :chats
+      redirect_to root_path
     end
   end
 

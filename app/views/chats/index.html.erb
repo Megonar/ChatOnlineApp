@@ -1,16 +1,26 @@
 <%= turbo_stream_from :chats %>
 
 <%= turbo_frame_tag :chats do %>
-  <%= render @chats %>
+  <div class="card">
+    <div class="card-header">Chats</div>
+    <ul class="list-group list-group-flush">
+      <%= render @chats %>
+    </ul>
+  </div>
 <% end %>
 
 <% if current_user.present? %>
-  <%= form_with model: @new_chat, class: "mt-4" do |f| %>
-    <div class="input-group">
-      <%= f.text_field :title, class: "form-control", placeholder: "Enter chat title" %>
-      <div class="input-group-append">
-        <%= f.submit "Create chat", class: "btn btn-primary" %>
-      </div>
+  <div class="card mt-4">
+    <div class="card-header">Create Chat</div>
+    <div class="card-body">
+      <%= form_with model: @new_chat, class: "mb-0" do |f| %>
+        <div class="input-group">
+          <%= f.text_field :title, class: "form-control", placeholder: "Enter chat title" %>
+          <div class="input-group-append">
+            <%= f.submit "Create Chat", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 <% end %>

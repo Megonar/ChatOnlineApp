@@ -9,10 +9,10 @@
   </div>
 </div>
 
-<%= form_with model: @new_message, data: { controller: "chat_refresh", action: "turbo:submit-end->chat_refresh#clearInput" } do |f| %>
-  <div class="rounded-md shadow-sm space-y-px">
+<%= form_with model: @new_message do |f| %>
+  <div class="rounded-md shadow-sm p-2 bg-white">
     <%= f.text_field :text, autofocus: true, required: true, placeholder: "Your text", class: "form-control" %>
     <%= f.hidden_field :chat_id, value: @chat.id %>
-    <button type="submit" class="btn btn-primary">Send</button>
+    <button type="submit" class="btn btn-primary mt-2 py-2 px-4 rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out">Send</button>
   </div>
 <% end %>
