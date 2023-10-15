@@ -7,7 +7,7 @@ Welcome to ChatOnlineApp! This README provides essential information to help you
 To run this application, you'll need the following software installed:
 
 - Ruby 3.1.1
-- Ruby on Rails 7.0.8
+- Ruby on Rails 7.0.8 + Hotwire
 - PostgreSQL
 
 ## Database Setup
@@ -16,22 +16,21 @@ To create and set up the database, follow these steps:
 
 1. Create the database:
 
-   
+   ```bash
    rails db:create
 
 2. Apply database migrations:
 
-    
+    ```bash
     rails db:migrate
 
 3. Seed the database with initial data:
 
-    
+    ```bash
     rails db:seed
 
 ## Start Application
 
-    
     rails server
     
 
