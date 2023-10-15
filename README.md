@@ -10,6 +10,10 @@ To run this application, you'll need the following software installed:
 - Ruby on Rails 7.0.8 + Hotwire
 - PostgreSQL
 
+## Cloning a repository
+
+    git clone git@github.com:Megonar/ChatOnlineApp.git
+
 ## Database Setup
 
 To create and set up the database, follow these steps:
