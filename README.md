@@ -46,7 +46,7 @@ To retrieve a list of all chats using the API, make a GET request to the followi
 
 ## Send a Message via API to Any Chat
 
-To send a message to a chat using the API, make a POST request with the message text to the following endpoint, replacing `[Chat_name]` with the actual chat name:
+To send a message to a chat using the API, make a POST request with the message text to the following endpoint, replacing `CHAT_NAME` with the actual chat name:
 
     
     curl -X POST \
@@ -54,5 +54,5 @@ To send a message to a chat using the API, make a POST request with the message 
     -d '{
       "text": "Your message text"
     }' \
-    http://127.0.0.1:3000/api/v1/chats/[Chat_name]/messages
+    http://127.0.0.1:3000/api/v1/chats/CHAT_NAME/messages
     
