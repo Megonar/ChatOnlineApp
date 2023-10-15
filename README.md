@@ -31,7 +31,7 @@ To create and set up the database, follow these steps:
 
 ## Start Application
 
-    ```bash
+    ```
     rails server
     ```
 
@@ -41,7 +41,7 @@ To create and set up the database, follow these steps:
 
 To retrieve a list of all chats using the API, make a GET request to the following endpoint:
 
-    ```bash
+    ```
     curl http://localhost:3000/api/v1/chats
     ```
 
@@ -49,7 +49,7 @@ To retrieve a list of all chats using the API, make a GET request to the followi
 
 To send a message to a chat using the API, make a POST request with the message text to the following endpoint, replacing `[Chat_name]` with the actual chat name:
 
-    ```bash
+    ```
     curl -X POST \
     -H "Content-Type: application/json" \
     -d '{
