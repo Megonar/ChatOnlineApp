@@ -2,7 +2,7 @@ class Message < ApplicationRecord
   belongs_to :user
   belongs_to :chat
 
-  scope :sorted, -> { order(:id) }
+  validates :text, presence: true, length: { maximum: 200 }
 
-  validates :text, presence: true
+  scope :sorted, -> { order(created_at: :asc) }
 end
