@@ -14,6 +14,10 @@ To run this application, you'll need the following software installed:
 
     git clone git@github.com:Megonar/ChatOnlineApp.git
 
+## In the repository with the project
+    
+    bundle install
+
 ## Database Setup
 
 To create and set up the database, follow these steps:
